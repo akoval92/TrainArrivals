@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TrainSchedule</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel:900" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
+</head>
+
+<body>
+
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Train Arrivals</h1>
+            <h3 class="lead">What time is it? TRAIN TIME!!!</h3>
+        </div>
+    </div>
+
+
+    <div class="card">
+        <div class="card-header">
+            <h4>Schedule</h4>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Destination 1</li>
+            <li class="list-group-item">Destination 2</li>
+            <li class="list-group-item">Destination 3</li>
+            <li class="list-group-item">Destination 4</li>
+            <li class="list-group-item">Destination 5</li>
+            <li class="list-group-item">Destination 6</li>
+            <li class="list-group-item">Destination 7</li>
+        </ul>
+    </div>
+
+    <br>
+    <br>
+    <!--Change <br>s to padding/margins-->
+    <br>
+    <br>
+
+
+    <div class="card">
+        <div class="card-header">
+            <h4>Check Train</h4>
+        </div>
+
+        <ul class="list-group list-group-flush">
+            <div class="form-group">
+                <label for="userTrainInput"></label>
+                <li>
+                    <label for="trainName">Train Name</label>
+                    <form><input id="trainName" type="text" class="form-control"></form>
+                </li>
+
+                <li>
+                    <label for="dest">Destination</label>
+                    <form><input id="dest" type="text" class="form-control"></form>
+                </li> 
+
+                <li>
+                    <label for="firstTrain">First Train Time (Military)</label>
+                    <form><input id="firstTrain" type="text" class="form-control"></form>
+                </li>   
+                
+                <li>
+                    <label for="freq">Frequency (mins)</label>
+                    <form><input id="freq" type="text" class="form-control"></form>
+                </li>
+            </ul>
+
+            <button type="submit" class="btn btn-primary" value="Submit">Submit</button>
+            
+        </div>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="assets/javascript/Moments.js"></script>
+
+
+</body>
+
+</html>
