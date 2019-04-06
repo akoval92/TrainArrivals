@@ -10,34 +10,41 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>                <!--Firebase link-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>   <!--Moments link-->
 </head>
 
 <body>
 
 
+    <div class="container">
     <div class="jumbotron jumbotron-fluid">
-        <div class="container">
             <h1 class="display-4">Train Arrivals</h1>
             <h3 class="lead">What time is it? TRAIN TIME!!!</h3>
         </div>
     </div>
 
 
-    <div class="card">
-        <div class="card-header">
-            <h4>Schedule</h4>
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">Destination 1</li>
-            <li class="list-group-item">Destination 2</li>
-            <li class="list-group-item">Destination 3</li>
-            <li class="list-group-item">Destination 4</li>
-            <li class="list-group-item">Destination 5</li>
-            <li class="list-group-item">Destination 6</li>
-            <li class="list-group-item">Destination 7</li>
-        </ul>
-    </div>
+    <div class="container">
+        <h4 id="current">Current Trains</h4>
+        <div class="container border border-dark rounded">
+            <table id="trainTable"  class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Train Name</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">First Train Time (Military)</th>
+                        <th scope="col">Frequency (mins)</th>
+                    </tr>
+                </thead>
 
+                <tbody id="employeeInfo">
+        </div>
+
+        </tbody>
+
+        </table>
+    </div>
     <br>
     <br>
     <!--Change <br>s to padding/margins-->
@@ -50,45 +57,23 @@
             <h4>Check Train</h4>
         </div>
 
-        <ul class="list-group list-group-flush">
             <div class="form-group">
                 <label for="userTrainInput"></label>
-                <li>
-                    <label for="trainName">Train Name</label>
-                    <form><input id="trainName" type="text" class="form-control"></form>
-                </li>
+                    <label for="trainInput">Train Name</label>
+                    <form><input id="trainInput" type="text" class="form-control"></form>
 
-                <li>
-                    <label for="dest">Destination</label>
-                    <form><input id="dest" type="text" class="form-control"></form>
-                </li> 
+                    <label for="destInput">Destination</label>
+                    <form><input id="destInput" type="text" class="form-control"></form>
 
-                <li>
-                    <label for="firstTrain">First Train Time (Military)</label>
-                    <form><input id="firstTrain" type="text" class="form-control"></form>
-                </li>   
-                
-                <li>
-                    <label for="freq">Frequency (mins)</label>
-                    <form><input id="freq" type="text" class="form-control"></form>
-                </li>
-            </ul>
+                    <label for="timeInput">First Train Time (Military)</label>
+                    <form><input id="timeInput" type="text" class="form-control"></form>
 
-            <button type="submit" class="btn btn-primary" value="Submit">Submit</button>
-            
-        </div>
-        
+                    <label for="trainFreq">Frequency (mins)</label>
+                    <form><input id="trainFreq" type="text" class="form-control"></form>
 
+        <button id="add-train-btn" type="submit" class="btn btn-primary" value="Submit">Submit</button>
 
-
-
-
-
-
-
-
-
-
+    </div>
 
 
 
