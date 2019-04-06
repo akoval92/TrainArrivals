@@ -18,13 +18,14 @@ $(document).ready(function () {
         var trainName = $("#trainInput").val();
         var trainDest = $("#destInput").val();
         var trainTime = moment("#timeInput").format("H/HH");
+        console.log(trainTime)
         var trainFreq = moment("#timeInput").format(":mm");
 
         var newTrain = {
-            name: trainName,                   //trainName
-            destination: trainDest,                   //trainDest
+            name: trainName,              //trainName
+            destination: trainDest,       //trainDest
             time: trainTime,              //trainTime
-            frequency: trainFreq                    //trainFreq
+            frequency: trainFreq          //trainFreq
 
         };
         database.ref().push(newTrain);
@@ -35,25 +36,26 @@ $(document).ready(function () {
         database.ref().on("child_added", function(snap) {
 
 
-        var addName = snap.val().trainName;
-        var addDest = snap.val().trainDest;
-        var addTime = snap.val().trainTime;
-        var addFreq = snap.val().trainFreq;
+        var addName = snap.val().name;
+        var addDest = snap.val().destination;
+        var addTime = snap.val().time;
+        var addFreq = snap.val().frequency;
 
 
         // var timingStart = moment("13:00").(addTime).format("H, HH");    // timing format?????
 
+        var row = 
+        '<tr>'+
+            '<td>'+addName+'</td>'+
+            '<td>'+addDest+'</td>'+
+            '<td>'+addTime+'</td>'+
+            '<td>'+addFreq+'</td>'+
+        '</tr>';
 
-        var newLine = $("<tr>").append(
+        $("tbody").append(row);
 
-            $("<td>").text(addName),
-            $("<td>").text(addDest),
-            $("<td>").text(addTime),
-            $("<td>").text(addFreq)
-        );
-
-        
-        $("#trainTable > tbody").append(newLine)
-    });
+        });
 
 });
+
+
