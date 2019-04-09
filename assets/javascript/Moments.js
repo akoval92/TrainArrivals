@@ -17,19 +17,24 @@ $(document).ready(function () {
 
         var trainName = $("#trainInput").val();
         var trainDest = $("#destInput").val();
-        var trainTime = moment("#timeInput").format("H/HH");
+        var trainTime = moment().format("HH:ss");
         console.log(trainTime)
-        var trainFreq = moment("#timeInput").format(":mm");
+        var trainFreq = moment().format("mm");
 
         var newTrain = {
-            name: trainName,              //trainName
-            destination: trainDest,       //trainDest
-            time: trainTime,              //trainTime
-            frequency: trainFreq          //trainFreq
+            name: trainName,              
+            destination: trainDest,       
+            time: trainTime,              
+            frequency: trainFreq          
 
         };
         database.ref().push(newTrain);
 
+
+        $("#trainInput").val("");
+        $("#destInput").val("");
+        $("#timeInput").val("");
+        $("#trainFreq").val("");
   
         });
 
@@ -55,6 +60,7 @@ $(document).ready(function () {
         $("tbody").append(row);
 
         });
+
 
 });
 

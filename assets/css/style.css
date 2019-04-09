@@ -29,7 +29,8 @@
 }
 #current{
     font-family: 'Cinzel', serif;    
-    background-color: mediumpurple
+    background-color: mediumpurple;
+    padding: 5px;
 }
 
 .btn {
